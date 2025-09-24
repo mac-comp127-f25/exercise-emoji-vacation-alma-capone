@@ -66,9 +66,7 @@ public class EmojiVacation {
         for(int num=0; num <family.size(); num++){
             GraphicsGroup vacayEmoji = family.get(num);
             canvas.add(vacayEmoji);
-        }
-        
-        
+        }        
     }
 
     // –––––– Emoji family –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -80,18 +78,15 @@ public class EmojiVacation {
             for (int i=0; i< adultCount; i++){
                 createFamilyList.add(createRandomEmoji(adultSize));
                 
-
             }
              for (int z=0; z < childCount; z++){
                 createFamilyList.add(createRandomEmoji(childSize)); 
-                
                 
             }
 
         System.out.println(createFamilyList);
         return createFamilyList;
-
-        
+  
     }
 
     

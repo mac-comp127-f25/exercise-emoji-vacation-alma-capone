@@ -47,12 +47,13 @@ Briefly reflect in writing on your experience solving this exercise. Just a
 sentence or two in response to each question is plenty.
 
 **What did you miss? What did you wish you did better?**
-
-
+  I was able to accomplish all of the mandatory tasks, but I think that I could've been better at paying attention to small 
+  syntax mistakes. I spent around an hour staring at my code because it wasn't working, and then I came back the next day 
+  and realized that there was a semi colon in the wrong place. 
 
 **What challenges did you face, and how did you overcome them?**
-
-
+ One of the challanges that I faced was figuring out how to format a for loop in Java. Because I am so used to Python, my brain defaulted to python. I ended up fixing this by looking back at the readings on loops and figuring out which loop matched best with what I wanted to accomplish. 
 
 **What is something that was interesting or exciting, or a lesson you learned
-  from this experience that you want to remember?**
+from this experience that you want to remember?**
+ I learned how to pause a canvas and remove objects from the canvas. I think that will be incredinly useful going forward with object-oriented programming. I also re-learned that semi-colons tell the compiler that a statement is done and that because of that they do not go in the condition statement section of a for loop. 

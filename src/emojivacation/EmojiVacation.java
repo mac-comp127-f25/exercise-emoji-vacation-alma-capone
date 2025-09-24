@@ -33,8 +33,13 @@ public class EmojiVacation {
     }
 
     private static void doSlideShow(CanvasWindow canvas) {
-        // TODO: [Instructions step 8] Change this to an actual slideshow
+        while(true){
         generateVacationPhoto(canvas);
+        canvas.draw();
+        canvas.pause(3000);
+        canvas.removeAll();
+        }
+        
     }
 
     private static void generateVacationPhoto(CanvasWindow canvas) {
@@ -59,8 +64,8 @@ public class EmojiVacation {
 
         
         for(int num=0; num <family.size(); num++){
-            GraphicsGroup number = family.get(num);
-            canvas.add(number);
+            GraphicsGroup vacayEmoji = family.get(num);
+            canvas.add(vacayEmoji);
         }
         
         
@@ -70,54 +75,49 @@ public class EmojiVacation {
 
     private static List<GraphicsGroup> createFamily(int adultCount, int childCount) {
         double adultSize = 160, childSize = 90;
-
-        List<GraphicsGroup> createFamily = new ArrayList<>();
-       
-        for (int y=0; y < adultCount; y++);{
-            createFamily.add(createRandomEmoji(adultSize));
-            
-        }
-
-        for (int z=0; z < childCount; z++);{
-           createFamily.add(createRandomEmoji(childSize)); 
-        }
-
-        return createFamily;
-
-        // TODO: [Instructions step 6] Change this so that instead of always creating one adult
-        //       and one child, it instead creates a list containing adultCount adults,
-        //       and childCount children.
-        //
-        // Hint: You can't use List.of() to do this, because you don't know the size of the
-        // resulting list before the code actually runs. What can you use?
-        //
-
-        //return List.of(
-            //createRandomEmoji(adultSize),
-            //createRandomEmoji(childSize));
-    }
-
-    private static GraphicsGroup createRandomEmoji(double size) {
         
-        int randomNumber=randomInt(0,4);
+        List<GraphicsGroup> createFamilyList = new ArrayList<>();
+            for (int i=0; i< adultCount; i++){
+                createFamilyList.add(createRandomEmoji(adultSize));
+                
 
-        if (randomNumber==0);{
-            return ProvidedEmojis.createFrownyFace(size);
-        }  
-        else if (randomNumber==1);{
-           return ProvidedEmojis.createContentedFace(size);
-        }  
-        else if (randomNumber==2);{
-          return ProvidedEmojis.createNauseousFace(size);
-        }  
-        else if (randomNumber==3);{
-           return ProvidedEmojis.createWinkingFace(size);
-       }  
-        else if (randomNumber==4);{
-            return ProvidedEmojis.createSmileyFace(size);
-        }
-      
+            }
+             for (int z=0; z < childCount; z++){
+                createFamilyList.add(createRandomEmoji(childSize)); 
+                
+                
+            }
+
+        System.out.println(createFamilyList);
+        return createFamilyList;
+
+        
     }
+
+    
+        private static GraphicsGroup createRandomEmoji(double size) {
+            
+           int randomNumber=randomInt(0,4);
+
+            if (randomNumber==0){
+               return ProvidedEmojis.createFrownyFace(size);
+            }  
+            else if (randomNumber==1){
+            return ProvidedEmojis.createContentedFace(size);
+            }  
+            else if (randomNumber==2){
+            return ProvidedEmojis.createNauseousFace(size);
+            }  
+            else if (randomNumber==3){
+                return ProvidedEmojis.createWinkingFace(size);
+            }  
+           else{
+                return ProvidedEmojis.createSmileyFace(size);
+           }
+        
+        }
+    
+    
 
     private static void positionFamily(
             List<GraphicsGroup> family,
@@ -126,11 +126,11 @@ public class EmojiVacation {
             double spacing
     ) {
         
-        for (int num=0; num < family.size(); num++){
-           GraphicsGroup number = family.get(num);
-           double Height=number.getHeight(); 
-           double Width=number.getWidth();
-           number.setPosition( leftX,(baselineY-Height));
+        for (int i=0; i < family.size(); i++){
+           GraphicsGroup vacationEmoji = family.get(i);
+           double Height=vacationEmoji.getHeight(); 
+           double Width=vacationEmoji.getWidth();
+           vacationEmoji.setPosition( leftX,(baselineY-Height));
            leftX=leftX + spacing + Width;
          
         }
